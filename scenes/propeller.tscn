@@ -13,3 +13,10 @@ texture = ExtResource("1_ryk0m")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1664727382]
 target_position = Vector2(0, -500)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=846228195]
+amount = 11
+emission_shape = 3
+emission_rect_extents = Vector2(50, 1)
+spread = 180.0
+gravity = Vector2(0, -980)
