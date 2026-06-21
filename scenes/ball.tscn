@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c5cw40u3huhl2"]
 
-[ext_resource type="Texture2D" uid="uid://b81t0og0y5vfa" path="res://icon.svg" id="1_7s4qf"]
 [ext_resource type="Script" uid="uid://duo7nb154u2vt" path="res://scripts/ball.gd" id="1_cxlvu"]
+[ext_resource type="Texture2D" uid="uid://bcp2q2cb4jp45" path="res://assets/sprites/ball.png" id="2_cxlvu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gwg1g"]
 radius = 64.070274
@@ -14,4 +14,5 @@ script = ExtResource("1_cxlvu")
 shape = SubResource("CircleShape2D_gwg1g")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=456705955]
-texture = ExtResource("1_7s4qf")
+scale = Vector2(3.8125, 3.8125)
+texture = ExtResource("2_cxlvu")
