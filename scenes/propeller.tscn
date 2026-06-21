@@ -1,15 +1,61 @@
 [gd_scene format=3 uid="uid://dof8wq1ow4qso"]
 
 [ext_resource type="Script" uid="uid://bucb56efncbuv" path="res://scripts/propeller.gd" id="1_mel5u"]
-[ext_resource type="Texture2D" uid="uid://b81t0og0y5vfa" path="res://icon.svg" id="1_ryk0m"]
+[ext_resource type="Texture2D" uid="uid://q74fd27xescv" path="res://assets/sprites/propeller.png" id="2_mel5u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34do6"]
+atlas = ExtResource("2_mel5u")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fo0m"]
+atlas = ExtResource("2_mel5u")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0j5bg"]
+atlas = ExtResource("2_mel5u")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmupe"]
+atlas = ExtResource("2_mel5u")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnnld"]
+atlas = ExtResource("2_mel5u")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abosk"]
+atlas = ExtResource("2_mel5u")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gwg1g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34do6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fo0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0j5bg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmupe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnnld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abosk")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 24.0
+}]
 
 [node name="propeller" type="Node2D" unique_id=1357652204 node_paths=PackedStringArray("raycast")]
 script = ExtResource("1_mel5u")
 raycast = NodePath("RayCast2D")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1195038375]
-scale = Vector2(1, 0.296875)
-texture = ExtResource("1_ryk0m")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1664727382]
 target_position = Vector2(0, -500)
@@ -20,3 +66,9 @@ emission_shape = 3
 emission_rect_extents = Vector2(50, 1)
 spread = 180.0
 gravity = Vector2(0, -980)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=259136013]
+position = Vector2(0, -14)
+scale = Vector2(3.0624998, 2.78125)
+sprite_frames = SubResource("SpriteFrames_gwg1g")
+frame_progress = 0.3593209

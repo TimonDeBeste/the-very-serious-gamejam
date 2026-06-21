@@ -7,6 +7,7 @@ extends Node2D
 func _ready() -> void:
 	for exception in exceptions:
 		raycast.add_exception(exception)
+	$AnimatedSprite2D.play("default")
 
 
 
