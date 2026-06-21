@@ -53,11 +53,24 @@ animations = [{
 "speed": 24.0
 }]
 
-[node name="propeller" type="Node2D" unique_id=1357652204 node_paths=PackedStringArray("raycast")]
+[node name="propeller" type="Node2D" unique_id=1357652204 node_paths=PackedStringArray("raycasts")]
 script = ExtResource("1_mel5u")
-raycast = NodePath("RayCast2D")
+raycasts = [NodePath("center"), NodePath("right"), NodePath("left")]
 
-[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1664727382]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=259136013]
+position = Vector2(0, -14)
+scale = Vector2(3.0624998, 2.78125)
+sprite_frames = SubResource("SpriteFrames_gwg1g")
+
+[node name="center" type="RayCast2D" parent="." unique_id=1664727382]
+target_position = Vector2(0, -500)
+
+[node name="right" type="RayCast2D" parent="." unique_id=508252297]
+position = Vector2(45, 0)
+target_position = Vector2(0, -500)
+
+[node name="left" type="RayCast2D" parent="." unique_id=1693182390]
+position = Vector2(-45, 0)
 target_position = Vector2(0, -500)
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=846228195]
@@ -66,9 +79,3 @@ emission_shape = 3
 emission_rect_extents = Vector2(50, 1)
 spread = 180.0
 gravity = Vector2(0, -980)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=259136013]
-position = Vector2(0, -14)
-scale = Vector2(3.0624998, 2.78125)
-sprite_frames = SubResource("SpriteFrames_gwg1g")
-frame_progress = 0.3593209

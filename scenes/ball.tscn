@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bcp2q2cb4jp45" path="res://assets/sprites/ball.png" id="2_cxlvu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gwg1g"]
-radius = 39.115215
+radius = 37.01351
 
 [node name="ball" type="RigidBody2D" unique_id=402535708]
-mass = 0.1
+mass = 0.25
 script = ExtResource("1_cxlvu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=945545808]
