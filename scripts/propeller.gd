@@ -2,6 +2,13 @@ extends Node2D
 
 
 @export var raycast: RayCast2D
+@export var exceptions: Array[CollisionObject2D]
+
+func _ready() -> void:
+	for exception in exceptions:
+		raycast.add_exception(exception)
+
+
 
 func _process(_delta: float) -> void:
 	
