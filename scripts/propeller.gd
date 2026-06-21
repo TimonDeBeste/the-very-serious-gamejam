@@ -2,8 +2,10 @@ extends Node2D
 
 
 @export var raycasts: Array[RayCast2D]
-
 @export var exceptions: Array[CollisionObject2D]
+
+var min_x = 49
+var max_x = 1103
 
 func _ready() -> void:
 	for raycast in raycasts:
@@ -23,3 +25,7 @@ func _process(_delta: float) -> void:
 				collider.apply_force(force)
 			
 	position.x = get_global_mouse_position().x
+	if position.x < min_x:
+		position.x = min_x
+	if position.x > max_x:
+		position.x = max_x
