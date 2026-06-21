@@ -8,10 +8,10 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
 		if collider.is_class("RigidBody2D"):
-			var distance = position.distance_to(collider.position)
-			var force = 5 * (raycast.target_position.y + distance)
-			collider.apply_force(Vector2(0, force))
+			var distance = Vector2(position.x - collider.position.x, position.y - collider.position.y)
+			var force = Vector2(-distance.x, 32 * (raycast.target_position.y + distance.y))
+			collider.apply_force(force)
