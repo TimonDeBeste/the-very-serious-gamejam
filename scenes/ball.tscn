@@ -3,16 +3,26 @@
 [ext_resource type="Script" uid="uid://duo7nb154u2vt" path="res://scripts/ball.gd" id="1_cxlvu"]
 [ext_resource type="Texture2D" uid="uid://bcp2q2cb4jp45" path="res://assets/sprites/ball.png" id="2_cxlvu"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ob2na"]
+radius = 30.016663
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_gwg1g"]
 radius = 37.01351
 
-[node name="ball" type="RigidBody2D" unique_id=402535708]
+[node name="ball" type="RigidBody2D" unique_id=402535708 node_paths=PackedStringArray("hurtbox")]
 mass = 0.25
 script = ExtResource("1_cxlvu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=945545808]
-shape = SubResource("CircleShape2D_gwg1g")
+hurtbox = NodePath("hurtbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=456705955]
 scale = Vector2(2.3125002, 2.3125)
 texture = ExtResource("2_cxlvu")
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=1442865625]
+physics_interpolation_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=205307482]
+shape = SubResource("CircleShape2D_ob2na")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=945545808]
+shape = SubResource("CircleShape2D_gwg1g")
