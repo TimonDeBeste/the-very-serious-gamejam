@@ -1,16 +1,19 @@
 [gd_scene format=3 uid="uid://3akxbd6qalie"]
 
-[ext_resource type="Texture2D" uid="uid://b81t0og0y5vfa" path="res://icon.svg" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://2p4kb7ctenhi" path="res://scripts/enemy.gd" id="1_md0e3"]
+[ext_resource type="Texture2D" uid="uid://bh0t3hstxl8qj" path="res://assets/sprites/spikes.png" id="2_md0e3"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gwg1g"]
-radius = 56.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mel5u"]
+size = Vector2(94, 27)
 
 [node name="enemy" type="Area2D" unique_id=1589086958]
+position = Vector2(0, 27)
 script = ExtResource("1_md0e3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=652744926]
-texture = ExtResource("1_7p1mj")
+scale = Vector2(3.375, 3.375)
+texture = ExtResource("2_md0e3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=216993129]
-shape = SubResource("CircleShape2D_gwg1g")
+position = Vector2(0, -13.5)
+shape = SubResource("RectangleShape2D_mel5u")
