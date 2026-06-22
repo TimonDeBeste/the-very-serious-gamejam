@@ -13,7 +13,5 @@ func _process(_delta: float) -> void:
 	#rotation = position.x / 32
 	
 	for area in hurtbox.get_overlapping_areas():
-		print(area.name)
-		if "enemy" in area.name:
-			if area.falling:
-				queue_free()
+		if "enemy" in area.name and area.falling:
+			queue_free()

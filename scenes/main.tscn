@@ -21,6 +21,7 @@ b = Vector2(1152, 0)
 
 [node name="Node2D" type="Node2D" unique_id=120366080]
 script = ExtResource("1_sugp2")
+enemy_chance = 1
 
 [node name="propeller" parent="." unique_id=1357652204 node_paths=PackedStringArray("exceptions") instance=ExtResource("2_sugp2")]
 position = Vector2(1103, 617)

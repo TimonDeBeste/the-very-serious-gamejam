@@ -1,5 +1,6 @@
 extends Area2D
 
+@onready var main = get_tree()
 var falling = false
 var fall_speed = 500
 
