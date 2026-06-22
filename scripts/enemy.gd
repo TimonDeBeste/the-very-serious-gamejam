@@ -8,8 +8,8 @@ var fall_speed = 500
 func _ready() -> void:
 	position.x = randi_range(1, 1000)
 	
-	for i in range(6):
-		await get_tree().create_timer(0.5).timeout
+	for i in range(12):
+		await get_tree().create_timer(0.25).timeout
 		visible = not visible
 		
 	falling = true
