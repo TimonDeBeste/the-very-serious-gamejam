@@ -25,31 +25,31 @@ script = ExtResource("1_sugp2")
 enemy_chance = 1
 
 [node name="background" type="Sprite2D" parent="." unique_id=306253283]
-position = Vector2(662.00006, 312)
+position = Vector2(662, 317.00003)
 scale = Vector2(2.5859375, 2.5859375)
 texture = ExtResource("2_jyhfs")
 
 [node name="propeller" parent="." unique_id=1357652204 node_paths=PackedStringArray("exceptions") instance=ExtResource("2_sugp2")]
 position = Vector2(585, 620)
-exceptions = [NodePath("../border")]
+exceptions = [NodePath("../border"), null]
 
 [node name="ball" parent="." unique_id=402535708 instance=ExtResource("1_0wfyh")]
 position = Vector2(585, 180)
 
 [node name="border" type="StaticBody2D" parent="." unique_id=1782017745]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="border" unique_id=261787929]
-position = Vector2(32, 0)
+[node name="left" type="CollisionShape2D" parent="border" unique_id=261787929]
+position = Vector2(24, 0)
 shape = SubResource("SegmentShape2D_gwg1g")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="border" unique_id=1792537007]
-position = Vector2(0, 616)
+[node name="bottom" type="CollisionShape2D" parent="border" unique_id=1792537007]
+position = Vector2(0, 648)
 shape = SubResource("SegmentShape2D_0wfyh")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="border" unique_id=461033075]
+[node name="top" type="CollisionShape2D" parent="border" unique_id=461033075]
 position = Vector2(0, -648)
 shape = SubResource("SegmentShape2D_jyhfs")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="border" unique_id=1074158658]
-position = Vector2(-32, 0)
+[node name="right" type="CollisionShape2D" parent="border" unique_id=1074158658]
+position = Vector2(-24, 0)
 shape = SubResource("SegmentShape2D_sugp2")

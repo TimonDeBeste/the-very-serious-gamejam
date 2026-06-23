@@ -63,14 +63,15 @@ scale = Vector2(3.0624998, 2.78125)
 sprite_frames = SubResource("SpriteFrames_gwg1g")
 
 [node name="center" type="RayCast2D" parent="." unique_id=1664727382]
+position = Vector2(0, 31)
 target_position = Vector2(0, -500)
 
 [node name="right" type="RayCast2D" parent="." unique_id=508252297]
-position = Vector2(61, 0)
+position = Vector2(61, 31)
 target_position = Vector2(0, -500)
 
 [node name="left" type="RayCast2D" parent="." unique_id=1693182390]
-position = Vector2(-61, 0)
+position = Vector2(-61, 31)
 target_position = Vector2(0, -500)
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=846228195]

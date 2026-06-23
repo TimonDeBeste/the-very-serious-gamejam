@@ -5,7 +5,9 @@ var max_y = 500
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	var propeller = get_parent().get_child(1)
+	if propeller.has_method("add_raycast_exception"):
+		propeller.add_raycast_exception($hurtbox)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

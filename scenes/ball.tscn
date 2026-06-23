@@ -10,7 +10,7 @@ radius = 30.016663
 radius = 37.01351
 
 [node name="ball" type="RigidBody2D" unique_id=402535708 node_paths=PackedStringArray("hurtbox")]
-mass = 0.25
+mass = 0.35
 script = ExtResource("1_cxlvu")
 hurtbox = NodePath("hurtbox")
 
