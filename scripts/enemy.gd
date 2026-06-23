@@ -19,3 +19,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if falling:
 		position.y += fall_speed * delta
+	
+	if position.y > 1200:
+		queue_free()

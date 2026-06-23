@@ -4,13 +4,10 @@
 [ext_resource type="Script" uid="uid://buivcq72kgk50" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="Texture2D" uid="uid://mee2px2ydqbj" path="res://assets/sprites/background.png" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dof8wq1ow4qso" path="res://scenes/propeller.tscn" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://jxjhqgggtukp" path="res://scenes/coin.tscn" id="5_tbgi4"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_gwg1g"]
 b = Vector2(0, 648)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_0wfyh"]
-a = Vector2(1152, 0)
-b = Vector2(0, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_jyhfs"]
 a = Vector2(1152, 648)
@@ -19,6 +16,10 @@ b = Vector2(0, 648)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_sugp2"]
 a = Vector2(1152, 648)
 b = Vector2(1152, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0wfyh"]
+a = Vector2(1152, 0)
+b = Vector2(0, 0)
 
 [node name="Node2D" type="Node2D" unique_id=120366080]
 script = ExtResource("1_sugp2")
@@ -31,7 +32,7 @@ texture = ExtResource("2_jyhfs")
 
 [node name="propeller" parent="." unique_id=1357652204 node_paths=PackedStringArray("exceptions") instance=ExtResource("2_sugp2")]
 position = Vector2(585, 620)
-exceptions = [NodePath("../border"), null]
+exceptions = [NodePath("../border")]
 
 [node name="ball" parent="." unique_id=402535708 instance=ExtResource("1_0wfyh")]
 position = Vector2(585, 180)
@@ -42,10 +43,6 @@ position = Vector2(585, 180)
 position = Vector2(24, 0)
 shape = SubResource("SegmentShape2D_gwg1g")
 
-[node name="bottom" type="CollisionShape2D" parent="border" unique_id=1792537007]
-position = Vector2(0, 648)
-shape = SubResource("SegmentShape2D_0wfyh")
-
 [node name="top" type="CollisionShape2D" parent="border" unique_id=461033075]
 position = Vector2(0, -648)
 shape = SubResource("SegmentShape2D_jyhfs")
@@ -53,3 +50,18 @@ shape = SubResource("SegmentShape2D_jyhfs")
 [node name="right" type="CollisionShape2D" parent="border" unique_id=1074158658]
 position = Vector2(-24, 0)
 shape = SubResource("SegmentShape2D_sugp2")
+
+[node name="bottom" type="CollisionShape2D" parent="border" unique_id=415673821]
+position = Vector2(0, 648)
+shape = SubResource("SegmentShape2D_0wfyh")
+
+[node name="coin" parent="." unique_id=1920534471 instance=ExtResource("5_tbgi4")]
+
+[node name="coin2" parent="." unique_id=1594980136 instance=ExtResource("5_tbgi4")]
+position = Vector2(1110, 609)
+
+[node name="Label" type="Label" parent="." unique_id=560234412]
+offset_left = 37.0
+offset_top = 24.0
+offset_right = 141.34784
+offset_bottom = 84.0

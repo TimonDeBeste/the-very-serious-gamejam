@@ -1,31 +1,31 @@
 [gd_scene format=3 uid="uid://dof8wq1ow4qso"]
 
 [ext_resource type="Script" uid="uid://bucb56efncbuv" path="res://scripts/propeller.gd" id="1_mel5u"]
-[ext_resource type="Texture2D" uid="uid://q74fd27xescv" path="res://assets/sprites/propeller.png" id="2_mel5u"]
+[ext_resource type="Texture2D" uid="uid://bwn50q8bekoew" path="res://assets/sprites/juniper.png" id="2_mel5u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_34do6"]
 atlas = ExtResource("2_mel5u")
-region = Rect2(0, 0, 32, 32)
+region = Rect2(0, 0, 32, 42)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5fo0m"]
 atlas = ExtResource("2_mel5u")
-region = Rect2(32, 0, 32, 32)
+region = Rect2(32, 0, 32, 42)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0j5bg"]
 atlas = ExtResource("2_mel5u")
-region = Rect2(64, 0, 32, 32)
+region = Rect2(64, 0, 32, 42)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qmupe"]
 atlas = ExtResource("2_mel5u")
-region = Rect2(96, 0, 32, 32)
+region = Rect2(96, 0, 32, 42)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mnnld"]
 atlas = ExtResource("2_mel5u")
-region = Rect2(128, 0, 32, 32)
+region = Rect2(128, 0, 32, 42)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_abosk"]
 atlas = ExtResource("2_mel5u")
-region = Rect2(160, 0, 32, 32)
+region = Rect2(160, 0, 32, 42)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gwg1g"]
 animations = [{
@@ -58,20 +58,21 @@ script = ExtResource("1_mel5u")
 raycasts = [NodePath("center"), NodePath("right"), NodePath("left")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=259136013]
-position = Vector2(0, -14)
-scale = Vector2(3.0624998, 2.78125)
+position = Vector2(1, -25.999996)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_gwg1g")
+frame_progress = 0.6043828
 
 [node name="center" type="RayCast2D" parent="." unique_id=1664727382]
 position = Vector2(0, 31)
 target_position = Vector2(0, -500)
 
 [node name="right" type="RayCast2D" parent="." unique_id=508252297]
-position = Vector2(61, 31)
+position = Vector2(45, 31)
 target_position = Vector2(0, -500)
 
 [node name="left" type="RayCast2D" parent="." unique_id=1693182390]
-position = Vector2(-61, 31)
+position = Vector2(-45, 31)
 target_position = Vector2(0, -500)
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=846228195]

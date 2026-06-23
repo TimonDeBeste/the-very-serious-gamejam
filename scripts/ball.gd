@@ -2,6 +2,7 @@ extends RigidBody2D
 
 var max_y = 500
 @export var hurtbox: Area2D
+@onready var main = get_parent()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,3 +18,11 @@ func _process(_delta: float) -> void:
 	for area in hurtbox.get_overlapping_areas():
 		if "enemy" in area.name and area.falling:
 			queue_free()
+		if "coin" in area.name:
+			main.score += 1
+			area.queue_free()
+			var coin = preload("res://scenes/coin.tscn").instantiate()
+			add_sibling(coin)
+			coin.name = "coin"
+			
+	
