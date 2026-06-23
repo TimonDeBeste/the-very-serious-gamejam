@@ -31,3 +31,6 @@ enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg")
 
 textures/canvas_textures/default_texture_filter=3
 rendering_device/driver.windows="d3d12"
+textures/size/mode=0
+textures/stretch/mode="viewport"
+textures/stretch/aspect="keep"

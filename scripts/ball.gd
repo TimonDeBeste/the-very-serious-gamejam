@@ -25,4 +25,6 @@ func _process(_delta: float) -> void:
 			add_sibling(coin)
 			coin.name = "coin"
 			
+	linear_velocity
+			
 	

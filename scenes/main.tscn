@@ -21,7 +21,7 @@ b = Vector2(1152, 0)
 a = Vector2(1152, 0)
 b = Vector2(0, 0)
 
-[node name="Node2D" type="Node2D" unique_id=120366080]
+[node name="main" type="Node2D" unique_id=120366080]
 script = ExtResource("1_sugp2")
 enemy_chance = 1
 

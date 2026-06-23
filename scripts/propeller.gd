@@ -17,6 +17,7 @@ func _process(_delta: float) -> void:
 	for raycast in raycasts:# Propeller system
 		if raycast.is_colliding(): 
 			var collider = raycast.get_collider()
+			print(collider)
 			if collider.is_class("RigidBody2D"):
 				var distance = Vector2(position.x - collider.position.x, position.y - collider.position.y)
 				var force = Vector2(-distance.x, (raycast.target_position.y + distance.y))
