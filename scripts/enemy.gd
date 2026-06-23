@@ -6,9 +6,9 @@ var fall_speed = 500
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	position.x = randi_range(1, 1000)
+	position.x = randi_range(50, 1000)
 	
-	for i in range(12):
+	for i in range(10):
 		await get_tree().create_timer(0.25).timeout
 		visible = not visible
 		

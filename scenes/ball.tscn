@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bcp2q2cb4jp45" path="res://assets/sprites/ball.png" id="2_cxlvu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ob2na"]
-radius = 51.47815
+radius = 25.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gwg1g"]
-radius = 64.070274
+radius = 40.012497
 
 [node name="ball" type="RigidBody2D" unique_id=402535708 node_paths=PackedStringArray("hurtbox")]
 mass = 0.35
