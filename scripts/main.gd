@@ -11,17 +11,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	var enemycount: int = 0
-	for child in get_children():
-		if "enemy" in child.name:
-			enemycount += 1
-	if enemycount < 4 and randi_range(1, 10) == 10:
-		var enemy = preload("res://scenes/enemy.tscn").instantiate()
-		add_child(enemy)
-		enemy.name = "enemy"
-	
-	label.text = str("Score: ", score)
-	
-	print(Global.game_state)
-	
-	
+	match Global.game_state:
+		"running":
+			var enemycount: int = 0
+			for child in get_children():
+				if "enemy" in child.name:
+					enemycount += 1
+			if enemycount < 4 and randi_range(1, 10) == 10:
+				var enemy = preload("res://scenes/enemy.tscn").instantiate()
+				add_child(enemy)
+				enemy.name = "enemy"
+			
+			label.text = str("Score: ", score)
