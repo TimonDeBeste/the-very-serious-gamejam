@@ -15,24 +15,35 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	
-	for raycast in raycasts:# Propeller system
-		if raycast.is_colliding():
-			var collider = raycast.get_collider()
-			print(collider)
-			if collider.is_class("RigidBody2D"):
-				var distance = Vector2(position.x - collider.position.x, position.y - collider.position.y)
-				print(distance)
-				var force = Vector2(-4 * distance.x, raycast.target_position.y + distance.y)
-				print(force)
-				collider.apply_force(force)
+	match Global.game_state:
+		"running":
+			
+			visible = true
+			
+			for raycast in raycasts:# Propeller system
 				
-	position.x = get_global_mouse_position().x
-	
-	if position.x < min_x:
-		position.x = min_x
-	if position.x > max_x:
-		position.x = max_x
+				if raycast.is_colliding():
+					var collider = raycast.get_collider()
+					
+					if collider.is_class("RigidBody2D"):
+						var distance = Vector2(position.x - collider.position.x, position.y - collider.position.y)
+						var force = Vector2(-4 * distance.x, raycast.target_position.y + distance.y)
+						collider.apply_force(force)
+				
 
+			
+			if position.x < min_x:
+				position.x = min_x
+			if position.x > max_x:
+				position.x = max_x
+				
+		"game_over", "paused":
+			visible = false
+			
+		"pre_game":
+			visible = true
+	position.x = get_global_mouse_position().x
 func add_raycast_exception(exception: CollisionObject2D):
+	
 	for raycast in raycasts:
 		raycast.add_exception(exception)

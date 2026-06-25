@@ -65,23 +65,23 @@ frame_progress = 0.8191601
 
 [node name="center" type="RayCast2D" parent="." unique_id=1664727382]
 position = Vector2(0, 31)
-target_position = Vector2(0, -500)
+target_position = Vector2(0, -600)
 
 [node name="center2" type="RayCast2D" parent="." unique_id=1571150252]
 position = Vector2(23, 31)
-target_position = Vector2(0, -500)
+target_position = Vector2(0, -600)
 
 [node name="center3" type="RayCast2D" parent="." unique_id=69882258]
 position = Vector2(-23, 31)
-target_position = Vector2(0, -500)
+target_position = Vector2(0, -600)
 
 [node name="right" type="RayCast2D" parent="." unique_id=508252297]
 position = Vector2(45, 31)
-target_position = Vector2(0, -500)
+target_position = Vector2(0, -600)
 
 [node name="left" type="RayCast2D" parent="." unique_id=1693182390]
 position = Vector2(-45, 31)
-target_position = Vector2(0, -500)
+target_position = Vector2(0, -600)
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=846228195]
 amount = 11

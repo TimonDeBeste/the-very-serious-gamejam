@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://mee2px2ydqbj" path="res://assets/sprites/background.png" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dof8wq1ow4qso" path="res://scenes/propeller.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://jxjhqgggtukp" path="res://scenes/coin.tscn" id="5_tbgi4"]
+[ext_resource type="Script" uid="uid://bu37ctrc1dqd7" path="res://scripts/pregame_countdown.gd" id="6_tefeu"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_gwg1g"]
 b = Vector2(0, 648)
@@ -20,6 +21,15 @@ b = Vector2(1152, 0)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_0wfyh"]
 a = Vector2(1152, 0)
 b = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gwg1g"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_ob2na"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_xgp41"]
+font_size = 32
 
 [node name="main" type="Node2D" unique_id=120366080]
 script = ExtResource("1_sugp2")
@@ -67,3 +77,156 @@ offset_top = 24.0
 offset_right = 141.34784
 offset_bottom = 84.0
 text = "Score: 0"
+
+[node name="game_over" type="Control" parent="." unique_id=376044222]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="backdrop" type="ColorRect" parent="game_over" unique_id=341094336]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -23.0
+offset_right = 1180.0
+offset_bottom = 675.0
+color = Color(0, 0, 0, 0.6509804)
+
+[node name="CenterContainer" type="CenterContainer" parent="game_over" unique_id=428383645]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Control" type="Control" parent="game_over/CenterContainer" unique_id=1330782060]
+layout_mode = 2
+
+[node name="restart" type="Button" parent="game_over/CenterContainer/Control" unique_id=311043275]
+layout_mode = 0
+offset_left = -173.0
+offset_top = -42.0
+offset_right = 173.0
+offset_bottom = 41.0
+text = "Start again"
+
+[node name="game_over_label" type="Label" parent="game_over/CenterContainer/Control" unique_id=1694536938]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -46.0
+offset_top = -99.5
+offset_right = 46.0
+offset_bottom = -76.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over!"
+label_settings = SubResource("LabelSettings_gwg1g")
+
+[node name="score_label" type="Label" parent="game_over/CenterContainer/Control" unique_id=663582553]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -51.0
+offset_top = 49.5
+offset_right = 51.0
+offset_bottom = 94.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Score: "
+label_settings = SubResource("LabelSettings_gwg1g")
+
+[node name="pregame_countdown" type="Control" parent="." unique_id=596153900]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("6_tefeu")
+
+[node name="Label" type="Label" parent="pregame_countdown" unique_id=113044332]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "3"
+label_settings = SubResource("LabelSettings_ob2na")
+horizontal_alignment = 1
+
+[node name="pause" type="Control" parent="." unique_id=648950679]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="backdrop" type="ColorRect" parent="pause" unique_id=966898983]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -23.0
+offset_right = 1180.0
+offset_bottom = 675.0
+color = Color(0, 0, 0, 0.6509804)
+
+[node name="CenterContainer" type="CenterContainer" parent="pause" unique_id=1924466589]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Control" type="Control" parent="pause/CenterContainer" unique_id=513280298]
+layout_mode = 2
+
+[node name="continue_button" type="Button" parent="pause/CenterContainer/Control" unique_id=1887153606]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -25.0
+offset_right = 136.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Continue"
+
+[node name="quit_button" type="Button" parent="pause/CenterContainer/Control" unique_id=1733001762]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = 29.0
+offset_right = 136.0
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit game"
+
+[node name="Label" type="Label" parent="pause/CenterContainer/Control" unique_id=1216858228]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.5
+offset_top = -91.5
+offset_right = 28.5
+offset_bottom = -68.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Paused"
+label_settings = SubResource("LabelSettings_xgp41")

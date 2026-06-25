@@ -15,15 +15,29 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	#rotation = position.x / 32
 	
-	for area in hurtbox.get_overlapping_areas():
-		if "enemy" in area.name and area.falling:
-			queue_free()
-		if "coin" in area.name:
-			main.score += 1
-			area.queue_free()
-			var coin = preload("res://scenes/coin.tscn").instantiate()
-			add_sibling(coin)
-			coin.name = "coin"
-			
-			
 	
+	match Global.game_state:
+		"running":
+			freeze = false
+			visible = true
+			for area in hurtbox.get_overlapping_areas():
+				
+				if "enemy" in area.name and area.falling:
+					Global.game_state = "game_over"
+					
+				if "coin" in area.name:
+					main.score += 1
+					area.queue_free()
+					var coin = preload("res://scenes/coin.tscn").instantiate()
+					add_sibling(coin)
+					coin.name = "coin"
+					
+		"game_over":
+			queue_free()
+			
+		"paused":
+			visible = false
+			freeze = true
+		"pre_game":
+			visible = true
+			freeze = true

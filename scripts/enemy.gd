@@ -17,8 +17,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if falling:
-		position.y += fall_speed * delta
-	
-	if position.y > 1200:
-		queue_free()
+	match Global.game_state:
+		"running":
+			
+			if falling:
+				visible = true
+				position.y += fall_speed * delta
+			
+			if position.y > 1200:
+				queue_free()
+		_:
+			if falling:
+				visible = false
