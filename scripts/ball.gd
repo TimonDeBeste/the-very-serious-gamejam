@@ -23,7 +23,8 @@ func _process(_delta: float) -> void:
 			for area in hurtbox.get_overlapping_areas():
 				
 				if "enemy" in area.name and area.falling:
-					Global.game_state = "game_over"
+					area.queue_free()
+					Global.health -= 1
 					
 				if "coin" in area.name:
 					main.score += 1

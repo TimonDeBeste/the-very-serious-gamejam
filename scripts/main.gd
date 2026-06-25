@@ -8,6 +8,7 @@ var score: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.game_state = "pre_game"
+	Global.health = 3
 	$pregame_countdown.activate()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -58,7 +59,6 @@ func _process(_delta: float) -> void:
 			$game_over.hide()
 		"pre_game":
 			$pregame_countdown.show()
-			
 			$pause.hide()
 			$game_over.hide()
 	

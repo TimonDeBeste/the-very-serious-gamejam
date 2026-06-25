@@ -11,8 +11,7 @@ func _ready() -> void:
 		await get_tree().create_timer(0.25).timeout
 		visible = not visible
 		if Global.game_state != "running":
-			visible = false
-			i -= 1
+			visible = false 
 	falling = true
 
 

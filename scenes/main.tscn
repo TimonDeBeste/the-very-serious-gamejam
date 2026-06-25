@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dof8wq1ow4qso" path="res://scenes/propeller.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://jxjhqgggtukp" path="res://scenes/coin.tscn" id="5_tbgi4"]
 [ext_resource type="Script" uid="uid://bu37ctrc1dqd7" path="res://scripts/pregame_countdown.gd" id="6_tefeu"]
+[ext_resource type="Texture2D" uid="uid://cmp7c0e1nljo2" path="res://assets/sprites/heart-full.png" id="7_o6xl0"]
+[ext_resource type="Script" uid="uid://dyrthslh0h6tn" path="res://scripts/health_bar.gd" id="7_tipki"]
+[ext_resource type="Texture2D" uid="uid://dglir8qvly48h" path="res://assets/sprites/heart-empty.png" id="8_85g3d"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_gwg1g"]
 b = Vector2(0, 648)
@@ -30,6 +33,9 @@ font_size = 64
 
 [sub_resource type="LabelSettings" id="LabelSettings_xgp41"]
 font_size = 32
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o6xl0"]
+load_path = "res://.godot/imported/heart-full.png-da5e1db3deb216e7501f55d45348b265.ctex"
 
 [node name="main" type="Node2D" unique_id=120366080]
 script = ExtResource("1_sugp2")
@@ -230,3 +236,29 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Paused"
 label_settings = SubResource("LabelSettings_xgp41")
+
+[node name="health_bar" type="HBoxContainer" parent="." unique_id=2039874618]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 947.5
+offset_top = 15.5
+offset_right = 994.5
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+script = ExtResource("7_tipki")
+empty_texture = ExtResource("8_85g3d")
+
+[node name="health" type="TextureRect" parent="health_bar" unique_id=1628056436]
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_o6xl0")
+
+[node name="health2" type="TextureRect" parent="health_bar" unique_id=1270796861]
+layout_mode = 2
+texture = ExtResource("7_o6xl0")
+
+[node name="health3" type="TextureRect" parent="health_bar" unique_id=1153398767]
+layout_mode = 2
+texture = ExtResource("7_o6xl0")
