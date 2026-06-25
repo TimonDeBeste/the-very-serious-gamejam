@@ -42,8 +42,8 @@ script = ExtResource("1_sugp2")
 enemy_chance = 1
 
 [node name="background" type="Sprite2D" parent="." unique_id=306253283]
-position = Vector2(662, 317.00003)
-scale = Vector2(2.5859375, 2.5859375)
+position = Vector2(665.49994, 315)
+scale = Vector2(2.5996091, 2.6015623)
 texture = ExtResource("2_jyhfs")
 
 [node name="propeller" parent="." unique_id=1357652204 node_paths=PackedStringArray("raycasts", "exceptions") instance=ExtResource("2_sugp2")]

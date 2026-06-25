@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="the-very-serious-gamejam"
-run/main_scene="uid://dir84g83ypcjm"
+run/main_scene="uid://c8cirdyyl2xt7"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
