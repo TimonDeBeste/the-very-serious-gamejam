@@ -30,8 +30,9 @@ position = Vector2(662, 317.00003)
 scale = Vector2(2.5859375, 2.5859375)
 texture = ExtResource("2_jyhfs")
 
-[node name="propeller" parent="." unique_id=1357652204 node_paths=PackedStringArray("exceptions") instance=ExtResource("2_sugp2")]
-position = Vector2(585, 620)
+[node name="propeller" parent="." unique_id=1357652204 node_paths=PackedStringArray("raycasts", "exceptions") instance=ExtResource("2_sugp2")]
+position = Vector2(585, 621)
+raycasts = [NodePath("center"), NodePath("right"), NodePath("left")]
 exceptions = [NodePath("../border")]
 
 [node name="ball" parent="." unique_id=402535708 instance=ExtResource("1_0wfyh")]
@@ -58,10 +59,11 @@ shape = SubResource("SegmentShape2D_0wfyh")
 [node name="coin" parent="." unique_id=1920534471 instance=ExtResource("5_tbgi4")]
 
 [node name="coin2" parent="." unique_id=1594980136 instance=ExtResource("5_tbgi4")]
-position = Vector2(1110, 609)
 
 [node name="Label" type="Label" parent="." unique_id=560234412]
+modulate = Color(0, 0, 0, 1)
 offset_left = 37.0
 offset_top = 24.0
 offset_right = 141.34784
 offset_bottom = 84.0
+text = "Score: "

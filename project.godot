@@ -15,13 +15,17 @@ run/main_scene="uid://dir84g83ypcjm"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://cmiotob6bp2b3"
+
 [display]
 
 window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg")
+enabled=PackedStringArray()
 
 [physics]
 

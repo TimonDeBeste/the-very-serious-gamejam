@@ -55,7 +55,7 @@ animations = [{
 
 [node name="propeller" type="Node2D" unique_id=1357652204 node_paths=PackedStringArray("raycasts")]
 script = ExtResource("1_mel5u")
-raycasts = [NodePath("center"), NodePath("right"), NodePath("left"), NodePath("centerleft"), NodePath("centerright")]
+raycasts = [NodePath("center"), NodePath("right"), NodePath("left"), NodePath("center2"), NodePath("center3")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=259136013]
 position = Vector2(1, -25.999996)
@@ -67,12 +67,12 @@ frame_progress = 0.8191601
 position = Vector2(0, 31)
 target_position = Vector2(0, -500)
 
-[node name="centerleft" type="RayCast2D" parent="." unique_id=1394058854]
-position = Vector2(-23, 31)
+[node name="center2" type="RayCast2D" parent="." unique_id=1571150252]
+position = Vector2(23, 31)
 target_position = Vector2(0, -500)
 
-[node name="centerright" type="RayCast2D" parent="." unique_id=610525731]
-position = Vector2(23, 31)
+[node name="center3" type="RayCast2D" parent="." unique_id=69882258]
+position = Vector2(-23, 31)
 target_position = Vector2(0, -500)
 
 [node name="right" type="RayCast2D" parent="." unique_id=508252297]

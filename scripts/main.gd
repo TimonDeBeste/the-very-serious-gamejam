@@ -22,4 +22,6 @@ func _process(_delta: float) -> void:
 	
 	label.text = str("Score: ", score)
 	
+	print(Global.game_state)
+	
 	
