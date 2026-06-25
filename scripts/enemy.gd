@@ -7,11 +7,12 @@ var fall_speed = 500
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	position.x = randi_range(50, 1000)
-	
 	for i in range(10):
 		await get_tree().create_timer(0.25).timeout
 		visible = not visible
-		
+		if Global.game_state != "running":
+			visible = false
+			i -= 1
 	falling = true
 
 
@@ -27,5 +28,4 @@ func _process(delta: float) -> void:
 			if position.y > 1200:
 				queue_free()
 		_:
-			if falling:
-				visible = false
+			visible = false
